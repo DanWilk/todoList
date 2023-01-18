@@ -54,4 +54,19 @@ header {
   margin-bottom: 0%;
 }
 
+.itemListContainer {
+  width: 30%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.noteItem {
+  width: 100%;
+}
+
+.NoteTitleArea {
+  display: flex;
+  justify-content: space-between;
+}
+
 
