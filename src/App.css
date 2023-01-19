@@ -58,15 +58,20 @@ header {
   width: 30%;
   display: flex;
   flex-wrap: wrap;
+  border-right: solid;
 }
 
 .noteItem {
   width: 100%;
+  border: solid;
 }
 
 .NoteTitleArea {
   display: flex;
   justify-content: space-between;
+  border-bottom: solid;
+  border-top: solid;
+  background-color: greenyellow;
 }
 
 
