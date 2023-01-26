@@ -6,7 +6,7 @@ const NoteEditor = () => {
             <form className='textEditorForm'>
                 <textarea className='titleArea'placeholder='Add your title here'></textarea>
                 <textarea className='noteContent' placeholder='Add your note text here'></textarea>
-                <button className='noteSubmitButton' type='submit'>Save</button>
+                <button className='noteSubmitButton' type='submit'>Save Note</button>
             </form>
         </section>
     )

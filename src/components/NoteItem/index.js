@@ -2,7 +2,7 @@ import React from "react";
 
 const NoteItem = (key) => {
     return (
-        <div className='NoteItmem' key={key}>
+        <div className='noteItem' key={key}>
             <div className='NoteTitleArea'>
                 <h3>Title 1</h3>
                 <p className='NoteDueDate'>1/26/2023</p>

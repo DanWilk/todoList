@@ -1,7 +1,5 @@
 .App {
   text-align: center;
-  height: 100vh;
-  overflow: hidden;
 }
 
 .App-logo {
@@ -42,16 +40,18 @@
 header {
   width: 100%;
   background-image: linear-gradient(to top right, #753De6, #CA20BA);
+  height: 13vh;
   justify-content: left;
   left: 0;
   top: 0;
   display: flex;
+  border-bottom: solid;
+  border-color: black;
 }
 
 main {
   display: flex;
   flex-wrap: wrap;
-  flex-grow: 1;
 }
 
 .pageTitle {
@@ -63,31 +63,36 @@ main {
 }
 
 .itemListContainer {
-  width: 30%;
+  width: 30vw;
   display: flex;
   flex-wrap: wrap;
   border-right: solid;
+  max-height: 87vh;
   overflow-y: scroll;
 }
 
 .noteItem {
   width: 100%;
-  border: solid;
+  border-bottom: solid;
+  border-left: solid;
 }
 
 .NoteTitleArea {
   display: flex;
   justify-content: space-between;
   border-bottom: solid;
-  border-top: solid;
   background-color: greenyellow;
 }
 
+.noteText {
+  border-bottom: solid;
+}
+
 .textEditorArea {
-  width: 69%;
+  width: 69.7vw;
   display: flex;
   flex-wrap: wrap;
-  max-height: 100vh;
+  max-height: 87vh;
 }
 .textEditorForm {
   width: 100%;
@@ -108,9 +113,12 @@ main {
 
 .noteSubmitButton {
   margin-left: 80%;
-  width: 85px;
-  height: 40px;
+  width: 10vh;
+  height: 5vh;
   margin-top: 20px;
+  background-image: radial-gradient(#753De6 0%, #CA20BA 80%);
+  font-weight: bold;
+  color:#ffffff;
   /* margin-right: 5%;
   margin-top: auto;
 
