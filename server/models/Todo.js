@@ -18,7 +18,7 @@ const TodoSchema = new Schema(
             type: Date,
             required: false,
         },
-        owner: {
+        owner_id: {
             type: Schema.Types.ObjectId,
             ref: "User"
         }
