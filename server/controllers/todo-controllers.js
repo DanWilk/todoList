@@ -37,5 +37,33 @@ const todoController = {
             res.status(400).json(err);
         });
     },
+
+    deleteTodo({params}, res) {
+        Todo.findOneAndDelete({_id: params.todoId})
+        .then(dbTodoData => {
+            if(!dbTodoData) {
+                res.status(404).json({message: "No message found with this id"});
+                return;
+            }
+            return User.findOneAndUpdate(
+                {_id: params.id},
+                {$pull: {todos: params.todoId}},
+                {new: true}
+                )
+        })
+        .then(dbUserData => {
+            if(!dbUserData) {
+                res.status(404).json({message: "No user found with this id"});
+                return;
+            }
+            res.json(dbUserData);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(400).json(err);
+        })
+    }
     
 }
+
+module.exports = todoController;
