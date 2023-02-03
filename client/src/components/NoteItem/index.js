@@ -1,6 +1,9 @@
 import React from "react";
 
 const NoteItem = (key) => {
+
+    
+
     return (
         <div className='noteItem' key={key}>
             <div className='NoteTitleArea'>
