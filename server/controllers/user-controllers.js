@@ -21,7 +21,7 @@ const userController = {
         });
     },
     createUser({body}, res) {
-        User.create(User)
+        User.create(body)
         .then(dbUserData => res.json(dbUserData))
         .catch(err => res.status(404).json(err));
     },
