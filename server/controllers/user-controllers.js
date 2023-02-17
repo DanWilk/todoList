@@ -1,5 +1,5 @@
 const {User} = require("../models");
-const { signtoken, authMiddleware } = require("../utils/auth");
+const { signToken, authMiddleware } = require("../utils/auth");
 
 const userController = {
     getUserById({params}, res) {
@@ -25,15 +25,16 @@ const userController = {
         User.create(body)
         .then(dbUserData => {
             const token = signToken(dbUserData);
-            res.json(
-                {
-                    token: token,
-                    user: dbUserData
-
-                }
-            )
+            const userResponseData = {
+                token: token,
+                user: dbUserData
+            }
+            res.json(userResponseData);
         })
-        .catch(err => res.status(404).json(err));
+        .catch(err => {
+            console.log(err);
+            res.status(404).json(err)
+        });
     },
     async login({ username, password}, res) {
         const user = await User.findOne({username});
