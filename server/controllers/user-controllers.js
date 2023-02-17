@@ -6,9 +6,9 @@ const userController = {
         User.findOne({_id: params.id})
         .populate({
             path: "todos",
-            // select: "-__v"
+            select: "-__v"
         })
-        // .select(-_v)
+        .select("-__v -password")
         .then(dbUserData => {
             if(!dbUserData) {
                 res.status(404).json({message: "No User found with this id!"});
