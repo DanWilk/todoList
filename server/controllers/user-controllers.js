@@ -25,9 +25,14 @@ const userController = {
         User.create(body)
         .then(dbUserData => {
             const token = signToken(dbUserData);
+            const userData = {
+                username: dbUserData.username,
+                email: dbUserData.email,
+                _id: dbUserData._id
+            }
             const userResponseData = {
                 token: token,
-                user: dbUserData
+                user: userData
             }
             res.json(userResponseData);
         })
