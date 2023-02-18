@@ -41,25 +41,30 @@ const userController = {
             res.status(404).json(err)
         });
     },
-    async login({ username, password}, res) {
-        const user = await User.findOne({username});
-
+    async login({body}, res) {
+        const user = await User.findOne({username: body.username});
+            
         if(!user) {
             res.json({text: "invalid username/password"});
         }
-
-        const correctPw = await user.isCorrectPassword(password);
-
+    
+        const correctPw = await user.isCorrectPassword(body.password);
+    
         if(!correctPw) {
             res.json({text: "invalid username/password"});
         }
 
+        const userData = {
+            username:user.username,
+            email:user.email,
+            _id:user._id
+        }
+    
         const token = signToken(user);
         res.json({
             token: token,
-            user: user
+            user: userData
         })
-
     },
     deleteUser({params}, res) {
         User.findOneAndDelete({_id: params._id})

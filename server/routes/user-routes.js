@@ -2,7 +2,9 @@ const router = require("express").Router();
 const {
     getUserById,
     createUser,
-    deleteUser
+    login,
+    deleteUser,
+    
 } = require("../controllers/user-controllers");
 
 router
@@ -13,5 +15,9 @@ router
     .route("/:id")
     .get(getUserById)
     .delete(deleteUser)
+
+router
+    .route("/login")
+    .post(login)
 
 module.exports = router;
