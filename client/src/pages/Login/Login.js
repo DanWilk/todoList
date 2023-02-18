@@ -1,6 +1,7 @@
 import React from "react";
 
 const Login = () => {
+    return (
     <main>
         <form class="loginForm">
             <label for="email">Email: </label>
@@ -9,6 +10,7 @@ const Login = () => {
             <input type="password" name="password" id="password"></input>
         </form>
     </main>
+    )
 }
 
 export default Login;
