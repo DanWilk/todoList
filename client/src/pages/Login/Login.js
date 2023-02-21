@@ -3,10 +3,11 @@ import Auth from "../../utils/auth";
 
 const Login = () => {
 
-    const [userData, setUserData] = useState({usename: "", email: ""});
+    const [userData, setUserData] = useState({email: "", password: ""});
 
     const handleChange = (event) => {
         const { name, value } = event.target;
+        console.log(userData);
 
         setUserData({
             ...userData,
@@ -18,14 +19,16 @@ const Login = () => {
         event.preventDefault();
         
         try {
-            await fetch("http://localhost3001.com/api/user", {
+            await fetch("http://localhost:3001/api/user/login", {
                 method: "POST",
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(userData),
                 
             })
-            .then(dbUserData => {
-                console.log(dbUserData);
-                Auth.login(dbUserData);
+            .then( response => response.json())
+            .then( (userData) => {
+                console.log(userData);
+                Auth.login(userData.token);
             })
         } catch(e) {
             console.error(e);

@@ -42,7 +42,7 @@ const userController = {
         });
     },
     async login({body}, res) {
-        const user = await User.findOne({username: body.username});
+        const user = await User.findOne({email: body.email});
             
         if(!user) {
             res.json({text: "invalid username/password"});

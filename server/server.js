@@ -10,6 +10,13 @@ const db = require('./config/connection');
 app.use(express.urlencoded({ extended: false}));
 app.use(express.json());
 
+app.use((req, res, next) => {
+    res.append('Access-Control-Allow-Origin', ['*']);
+    res.append('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.append('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
 app.use(require("./routes"));
 
 // mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017', {
