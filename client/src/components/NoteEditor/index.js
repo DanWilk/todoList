@@ -24,6 +24,9 @@ const NoteEditor = (noteText) => {
         <section className='textEditorArea'>
             <form className='textEditorForm'>
                 <textarea className='titleArea'placeholder='Add your title here'></textarea>
+                {/* <div className="newNoteHolder"> */}
+                <button type="button" className='newNoteButton'>New Note</button>
+                {/* </div> */}
                 <textarea className='noteContent' placeholder='Add your note text here' onChange={handleNoteChange} value={noteText.content}></textarea>
                 <button type='submit' className='noteSubmitButton' >Save Note</button>
             </form>

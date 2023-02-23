@@ -54,6 +54,10 @@ main {
   flex-wrap: wrap;
 }
 
+textarea {
+  resize: none;
+}
+
 .pageTitle {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 60px;
@@ -89,13 +93,15 @@ main {
 }
 
 .textEditorArea {
-  width: 69.7vw;
+  width: 69.6vw;
   display: flex;
   flex-wrap: wrap;
   max-height: 87vh;
 }
 .textEditorForm {
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .titleArea {
@@ -103,7 +109,17 @@ main {
   border-bottom-color: black;
   font-size: 30px;
   opacity: 50%;
-  width: 100%;
+  width: 70%;
+  margin: 0;
+}
+
+.newNoteButton {
+  width: 15%;
+  border: #282c34;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  margin: auto;
 }
 
 .noteContent {
