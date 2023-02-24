@@ -105,8 +105,8 @@ textarea {
 }
 
 .titleArea {
-  border-bottom: solid;
-  border-bottom-color: black;
+  border-style: none;
+  border-color: none;
   font-size: 30px;
   opacity: 50%;
   width: 70%;
