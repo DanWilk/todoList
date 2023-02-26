@@ -29,6 +29,9 @@ const Login = () => {
             .then( (userData) => {
                 console.log(userData);
                 Auth.login(userData.token);
+                if(Auth.loggedIn()) {
+                    window.location.assign(`/${userData.user._id}`)
+                }
             })
         } catch(e) {
             console.error(e);
