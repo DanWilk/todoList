@@ -42,6 +42,7 @@ const userController = {
         });
     },
     async login({body}, res) {
+        try {
         const user = await User.findOne({email: body.email});
             
         if(!user) {
@@ -65,6 +66,10 @@ const userController = {
             token: token,
             user: userData
         })
+        } catch {(error) => {
+            console.log(error)
+        }}
+        
     },
     deleteUser({params}, res) {
         User.findOneAndDelete({_id: params._id})
