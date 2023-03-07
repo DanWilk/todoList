@@ -141,3 +141,40 @@ textarea {
   margin-bottom: 20%; */
 }
 
+.loginFormContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 50vw;
+  justify-content: left;
+  border-right-style: solid;
+  border-right-color: #282c34;
+  border-right-width: 1px;
+}
+.loginForm {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.emailLabel {
+  width: 60%;
+  display:inline-block;
+  display: flex;
+  justify-content: left;
+  margin: 5% 5% 5%;
+}
+
+.passwordLabel {
+  width: 60%;
+  display: inline-block;
+  display: flex;
+  justify-content: left;
+  margin: 0% 5% 5%;
+}
+
+.emailInput {
+  margin-left: 15.5%;
+}
+
+.passwordInput {
+  margin-left: 5%;
+}

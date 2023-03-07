@@ -39,16 +39,18 @@ const Login = () => {
     }
     return (
     <main>
+        <div className="loginFormContainer">
         <form className="loginForm" onSubmit={handleFormSubmit}>
-            <label>Email: 
-            <input type="email" name="email" id="email" onChange={handleChange}></input>
+            
+            <label className="emailLabel">Email:
+            <input className="emailInput" type="email" name="email" id="email" onChange={handleChange}></input>
             </label>
-            <label>Password: 
-            <input type="password" name="password" id="password" onChange={handleChange}></input>
+            <label className="passwordLabel">Password: 
+            <input className="passwordInput" type="password" name="password" id="password" onChange={handleChange}></input>
             </label>
             <button type="submit">Login</button>
         </form>
-
+        </div>
     </main>
     )
 }
