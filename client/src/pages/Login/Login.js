@@ -39,7 +39,7 @@ const Login = () => {
     }
     return (
     <main>
-        <div className="loginFormContainer">
+        <div className="FormContainer">
         <form className="loginForm" onSubmit={handleFormSubmit}>
             
             <label className="emailLabel">Email:
@@ -48,8 +48,23 @@ const Login = () => {
             <label className="passwordLabel">Password: 
             <input className="passwordInput" type="password" name="password" id="password" onChange={handleChange}></input>
             </label>
+            <div className="buttonContainer">
             <button type="submit">Login</button>
+            </div>
         </form>
+        </div>
+        <div className="FormContainer">
+            <form className="signupForm">
+                <label className="usernameLabel">Username:
+                    <input className="usernameInput" type="text" name="username" id="username" onChange={handleChange}></input>
+                </label>
+                <label className="emailLabel">Email:
+                    <input className="emailInput" type="email" name="email" id="email"></input>
+                </label>
+                <label className="passwordLabel">Password: 
+                    <input className="passwordInput" type="password" name="password" id="password"></input>
+                </label>
+            </form>
         </div>
     </main>
     )
