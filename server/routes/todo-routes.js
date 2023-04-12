@@ -11,7 +11,10 @@ router
 
 router
     .route("/:todoId/:id")
-    .post(addTodo)
     .delete(deleteTodo);
+
+router
+    .route("/")
+    .post(addTodo);
 
 module.exports = router;

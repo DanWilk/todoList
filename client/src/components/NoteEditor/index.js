@@ -28,9 +28,39 @@ const NoteEditor = (noteText) => {
         console.log(noteInfo);
     }
 
-    const handleNoteSubmit = () => {
-        if(!noteInfo.id) {
+    const handleNoteSubmit = async (event) => {
+        if(noteInfo.id.length() > 0) {
             
+        try {
+            await fetch("http://localhost:3001/api/todo", {
+                method: "POST",
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(noteInfo),
+            })
+            .then(response => response.json())
+            .then((processedResponse) => {
+                console.log(processedResponse);
+            })
+        }
+        catch(e) {
+            console.error(e);
+        }
+        }
+        else {
+            try {
+                await fetch(`http://localhost:3001/api/todo/${noteInfo.id}`, {
+                    method: "PUT",
+                    headers: { 'Content-Type': 'application/json'},
+                    body: JSON.stringify(noteInfo)
+                })
+                .then(response => response.json())
+                .then(processedResponse => {
+                    console.log(processedResponse);
+                })
+            }
+            catch(e) {
+                console.error(e);
+            }
         }
     }
 
