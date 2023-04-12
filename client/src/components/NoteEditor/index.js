@@ -28,6 +28,12 @@ const NoteEditor = (noteText) => {
         console.log(noteInfo);
     }
 
+    const handleNoteSubmit = () => {
+        if(!noteInfo.id) {
+            
+        }
+    }
+
     return (
         <section className='textEditorArea'>
             <form className='textEditorForm'>
