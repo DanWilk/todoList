@@ -14,7 +14,7 @@ router
     .delete(deleteTodo);
 
 router
-    .route("/")
+    .route("/:id")
     .post(addTodo);
 
 module.exports = router;

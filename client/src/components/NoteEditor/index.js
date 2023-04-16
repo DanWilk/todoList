@@ -29,10 +29,15 @@ const NoteEditor = (noteText) => {
     }
 
     const handleNoteSubmit = async (event) => {
-        if(noteInfo.id.length() > 0) {
+        event.preventDefault();
+        if(!noteInfo.id > 0) {
+
+            let params = window.location.pathname;
+        params = params.slice(1);
+        console.log(params);
             
         try {
-            await fetch("http://localhost:3001/api/todo", {
+            await fetch(`http://localhost:3001/api/todo/${params}`, {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(noteInfo),
@@ -66,7 +71,7 @@ const NoteEditor = (noteText) => {
 
     return (
         <section className='textEditorArea'>
-            <form className='textEditorForm'>
+            <form className='textEditorForm' onSubmit={(handleNoteSubmit)}>
                 <textarea className='titleArea'placeholder='Add your title here' onChange={handleTitleChange} value={noteText.title}></textarea>
                 <button type="button" className='newNoteButton'>New Note</button>
                 <textarea className='noteContent' placeholder='Add your note text here' onChange={handleNoteChange} value={noteText.content}></textarea>

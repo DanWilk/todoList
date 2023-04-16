@@ -4,7 +4,8 @@ const todoController = {
     addTodo({params, body}, res) {
         Todo.create(body)
         .then(({_id}) => {
-            User.findOneAndUpdate(
+            console.log(params.id)
+            return User.findOneAndUpdate(
                 {_id: params.id},
                 {$push: {todos: _id}},
                 {new: true}
