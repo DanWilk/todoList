@@ -1,32 +1,28 @@
-import React, {useEffect, useState, useRef} from "react";
+import React, {useEffect} from "react";
 // import {useParams} from "react-router-dom";
 import NoteItem from "../NoteItem";
 
 const NoteListItem = () => {
 
-    const [todoList, setTodoList] = useState([]);
 
-    const datahasLoaded = useRef(0);
+    let data = [];
     useEffect(() => {
-        datahasLoaded.current = datahasLoaded.current + 1;
+        loadTodos();
     });
 
-    const loadTodos = async (dataHasLoaded) => {
+    const loadTodos = async () => {
 
-        console.log(todoList)
 
             await fetch(`http://localhost:3001/api/user${window.location.pathname}`)
             .then(response => response.json())
             .then(dbUserData => {
-                if(datahasLoaded < 1) {
                     console.log(dbUserData);
-                    setTodoList(dbUserData);
-                }
+                    data = dbUserData;
             })
             .catch(err => console.log(err))
     }
 
-    loadTodos(datahasLoaded);
+    // loadTodos(datahasLoaded);
     let array = [1, 2, 3, 4, 5]
 
     return (
